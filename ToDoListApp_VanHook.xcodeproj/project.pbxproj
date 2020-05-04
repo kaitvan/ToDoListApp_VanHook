@@ -17,6 +17,8 @@
 		86170261245F46A900233117 /* ToDoListApp_VanHookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86170260245F46A900233117 /* ToDoListApp_VanHookUITests.swift */; };
 		86170275245F9EFF00233117 /* ToDoTableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86170274245F9EFF00233117 /* ToDoTableViewController2.swift */; };
 		86170277245F9F5000233117 /* ToDo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86170276245F9F5000233117 /* ToDo2.swift */; };
+		86170279245FB4D700233117 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86170278245FB4D700233117 /* AddToDoViewController.swift */; };
+		8617027B245FC24800233117 /* CompleteToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617027A245FC24800233117 /* CompleteToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		86170262245F46A900233117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86170274245F9EFF00233117 /* ToDoTableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController2.swift; sourceTree = "<group>"; };
 		86170276245F9F5000233117 /* ToDo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo2.swift; sourceTree = "<group>"; };
+		86170278245FB4D700233117 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		8617027A245FC24800233117 /* CompleteToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteToDoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				86170244245F46A700233117 /* ToDoListApp_VanHook.xcdatamodeld */,
 				86170274245F9EFF00233117 /* ToDoTableViewController2.swift */,
 				86170276245F9F5000233117 /* ToDo2.swift */,
+				86170278245FB4D700233117 /* AddToDoViewController.swift */,
+				8617027A245FC24800233117 /* CompleteToDoViewController.swift */,
 			);
 			path = ToDoListApp_VanHook;
 			sourceTree = "<group>";
@@ -268,7 +274,9 @@
 				86170246245F46A700233117 /* ToDoListApp_VanHook.xcdatamodeld in Sources */,
 				86170275245F9EFF00233117 /* ToDoTableViewController2.swift in Sources */,
 				86170277245F9F5000233117 /* ToDo2.swift in Sources */,
+				8617027B245FC24800233117 /* CompleteToDoViewController.swift in Sources */,
 				8617023C245F46A700233117 /* AppDelegate.swift in Sources */,
+				86170279245FB4D700233117 /* AddToDoViewController.swift in Sources */,
 				8617023E245F46A700233117 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
