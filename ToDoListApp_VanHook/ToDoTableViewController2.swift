@@ -9,11 +9,13 @@
 import UIKit
 
 class ToDoTableViewController2: UITableViewController {
-    var toDos : [ToDo] = []
+    var toDos : [ToDoCD] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toDos = createToDos()
+        getToDos()
+        
+//        toDos = createToDos()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,16 +24,29 @@ class ToDoTableViewController2: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    func createToDos() -> [ToDo] {
-        let swift = ToDo()
-        swift.name = "Learn Swift"
-        swift.important = true
-        
-        let dog = ToDo()
-        dog.name = "Walk the dog"
-        
-        return [swift, dog]
+    func getToDos() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            if let coreDataToDos = try? context.fetch(ToDoCD.fetchRequest()) as? [ToDoCD] {
+                toDos = coreDataToDos
+                tableView.reloadData()
+            }
+        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getToDos()
+    }
+    
+//    func createToDos() -> [ToDo] {
+//        let swift = ToDo()
+//        swift.name = "Learn Swift"
+//        swift.important = true
+//
+//        let dog = ToDo()
+//        dog.name = "Walk the dog"
+//
+//        return [swift, dog]
+//    }
     
     // MARK: - Table view data source
 
@@ -51,10 +66,12 @@ class ToDoTableViewController2: UITableViewController {
 
         let toDo = toDos[indexPath.row]
         
-        if toDo.important {
-            cell.textLabel?.text = "❗️" + toDo.name
-        } else {
-            cell.textLabel?.text = toDo.name
+        if let name = toDo.name {
+            if toDo.important {
+                cell.textLabel?.text = "❗️" + name
+            } else {
+                cell.textLabel?.text = toDo.name
+            }
         }
         
         return cell
@@ -114,7 +131,7 @@ class ToDoTableViewController2: UITableViewController {
         }
         
         if let doneVC = segue.destination as? CompleteToDoViewController {
-            if let toDo = sender as? ToDo {
+            if let toDo = sender as? ToDoCD {
                 doneVC.selectedToDo = toDo
                 doneVC.previousVC = self
             }
